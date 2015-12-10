@@ -1,0 +1,58 @@
+.show_border{border: 0px dotted blue;}
+
+body {
+	padding-top: 26px;
+	font-size: 12px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#navigation_bar {
+	position: fixed; top: 0px; width: 100%; height: 25px; text-align: left; padding-top: 5px; padding-bottom: 5px;
+	/*Adds shadow to the bottom of the bar */
+	-webkit-box-shadow: 0px 0px 8px 0px #000000;-moz-box-shadow: 0px 0px 8px 0px #000000;box-shadow: 0px 0px 8px 0px #000000;
+	/*Adds the transparent background */ 
+	background-color: rgba(1, 1, 1, 0.6); color: rgba(1, 1, 1, 0.8);
+}
+#navigation_bar a {	font-size: 15px; color: white;	text-decoration: none;}
+#navigation_bar a:hover { font-size: 15px; color: red;	text-decoration: none;} 
+#navigation_bar label {	font-size: 15px; color: white;	text-align: center; text-decoration: none; }
+#url {padding-left: 200px;padding-right: 20px;}
+/*
+.input_login {font-size: 15px; width: 100px;padding-left: 0px; padding-right: 5px;color: white;text-decoration: none;}
+.input_search{font-size: 15px; width: 200px;padding-left: 0px; padding-right: 5px;color: white;text-decoration: none;}
+.navi_button{ font-size: 15px; width: 50px;padding-left: 0px; padding-right: 5px;color: black;text-decoration: none;}
+*/
+
+a {color:#252525; text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {color:#ba2636;text-decoration:underline;}
+a:active {color:#ba2636;}
+
+.main_box {	width:950px; margin-top:10px; margin-right: auto; margin-bottom: 10px; margin-left: auto;}
+.a_line_box { width:950px; margin-top:10px; padding-left: 0px; float: left; clear: both; height: auto; padding-right: 0px;
+	border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: #999999; }
+.line_name {margin-top:0px; width:100px; height:auto; float:left; margin-right:10px; }
+.label_name{padding-left: 30px; font-family:"微软雅黑"; font-size:12px; text-align: left;}
+
+/*navigation_items*/
+.nav{width:800px;height:91px;line-height:20px;overflow:hidden;margin-top:10px; padding-left: 30px; float: left;}
+.nav a{float:left;width:25px;padding-right:15px;line-height:22px;white-space:nowrap;}
+.nav strong a{color:rgb(216,93,167);}
+.nav-con{margin:10px 0 15px;float:left;overflow:hidden;}
+
+.divide{margin-right:18px;border-right:1px dashed #dcdddd;}
+.nav-con .w3{width:37px;}
+.nav-w160{width:160px;}
+.nav-w120{width:120px;}
+.nav-w135{width:135px;}
+
+.list_name {margin-top:0px; width:100px; height:auto; float:left; margin-right:10px; }
+.list_txt {width:830px; float:left; }
+.list_txt ul {float: left; width: 830px; display:block; margin-left:0px; padding-left:30px; margin-top:0px; padding-top: 10px;}
+.list_txt ul li {list-style:none; float: left;width: 122px; font-family:"微软雅黑"; font-size:12px; height: 35px; line-height: 31px;}
+.list_txt ul li a {display: block;	background:#f6f6f6;	text-align: center;	width: 120px; height: 31px;	line-height: 31px; -padding: 2px 0 0 0;	}
+.list_txt ul li a:hover,.list_txt ul li a.active { background: rgba(255, 255, 0, 0.3) no-repeat; text-decoration: none; color: red; font-weight:bold; }
+
+.search_list {width:572px;height:69px; margin-top:10px; margin-right: auto; margin-bottom: 10px; margin-left: auto;float:left;}
+/*Unused css sytle*/    

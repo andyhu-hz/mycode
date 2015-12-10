@@ -1,0 +1,1 @@
+/usr/bin/cc   -Wno-error=deprecated-declarations -Qunused-arguments -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/bench_http.dir/test/bench_http.c.o  -o bin/bench_http  lib/libevent_extra.a -lm 
