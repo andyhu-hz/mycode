@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if [ "$1" = 'clean' ] ; then
+    tc qdisc del dev eth0 root 2> /dev/null > /dev/null
+elif [ "$1" = 'delay' ] ; then
+    tc qdisc add dev eth0 root netem delay 100ms
+elif [ "$1" = 'duplicate' ] ; then
+    tc qdisc add dev eth0 root netem duplicate 1%
+elif [ "$1" = 'corrupt' ] ; then
+    tc qdisc add dev eth0 root netem corrupt 0.2%
+elif [ "$1" = 'disorder' ] ; then
+    tc qdisc change dev eth0 root netem delay 10ms reorder 25% 50%
+elif [ "$1" = 'loss' ] ; then
+    tc qdisc add dev eth0 root netem loss 1%
+elif [ "$1" = 'rate' ] ; then
+    tc qdisc add dev eth0 root handle 1: htb default 2
+    tc class add dev eth0 parent 1:1 classid 1:2 htb rate 2mbit ceil 2mbit prio 2
+    tc qdisc add dev eth0 parent 1:2 handle 2: sfq perturb 10
+    tc filter add dev eth0 protocol ip parent 1:0 u32 match ip dst 192.168.1.124 flowid 1:2
+    #tc class add dev eth0 parent 1:1 classid 1:3 htb rate 1mbit ceil 1mbit prio 2
+    #tc qdisc add dev eth0 parent 1:3 handle 3: sfq perturb 10
+    #tc filter add dev eth0 protocol ip parent 1:0 u32 match ip dst 192.168.0.1 flowid 1:3
+fi
+
+echo "Current tc status:"
+tc -s qdisc show dev eth0
+tc -s class show dev eth0
+tc -s filter show dev eth0
+exit 0
