@@ -1,1 +1,0 @@
-/usr/bin/cc   -Wno-error=deprecated-declarations -Qunused-arguments -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/test-ratelim.dir/test/test-ratelim.c.o  -o bin/test-ratelim  lib/libevent_extra.a -lm 

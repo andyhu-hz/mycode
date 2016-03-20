@@ -23,19 +23,6 @@
 void do_read(evutil_socket_t fd, short events, void *arg);
 void do_write(evutil_socket_t fd, short events, void *arg);
 
-char
-rot13_char(char c)
-{
-    /* We don't want to use isalpha here; setting the locale would change
-     * which characters are considered alphabetical. */
-    if ((c >= 'a' && c <= 'm') || (c >= 'A' && c <= 'M'))
-        return c + 13;
-    else if ((c >= 'n' && c <= 'z') || (c >= 'N' && c <= 'Z'))
-        return c - 13;
-    else
-        return c;
-}
-
 void
 readcb(struct bufferevent *bev, void *ctx)
 {
@@ -48,9 +35,6 @@ readcb(struct bufferevent *bev, void *ctx)
 	
     while ((line = evbuffer_readln(input, &n, EVBUFFER_EOL_LF))) {
 		printf("Receive data from client: length = %d, %s\n", (int)n, line);
-        for (i = 0; i < n; ++i) {
-        	line[i] = rot13_char(line[i]);
-        }
         evbuffer_add(output, line, n);
         evbuffer_add(output, "\n", 1);
         free(line);

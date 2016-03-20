@@ -1,1 +1,0 @@
-/usr/bin/cc   -Wno-error=deprecated-declarations -Qunused-arguments -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/test-time.dir/test/test-time.c.o  -o bin/test-time  lib/libevent_extra.a -lm 
