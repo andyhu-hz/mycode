@@ -1,3 +1,3 @@
-mini next project
+cs
 =========
 This project template is used to do some test.

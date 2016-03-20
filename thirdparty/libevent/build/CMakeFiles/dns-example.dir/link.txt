@@ -1,1 +1,0 @@
-/usr/bin/cc   -Wno-error=deprecated-declarations -Qunused-arguments -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/dns-example.dir/sample/dns-example.c.o  -o bin/dns-example  lib/libevent_extra.a /usr/local/Cellar/openssl/1.0.1j_1/lib/libssl.dylib /usr/local/Cellar/openssl/1.0.1j_1/lib/libcrypto.dylib /usr/lib/libz.dylib -lm 

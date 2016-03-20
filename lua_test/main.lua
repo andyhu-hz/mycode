@@ -11,8 +11,15 @@ function test1()
     print(hello.hello_sin(9))
 end
 
---print(hello.hello_sin(1))
---test1()
+--[[
+t = {}
+t1 = {}
+t2 = setmetatable(t, t1)
+print(t == t2)
+]]--
+
+print(hello.hello_sin(1))
+test1()
 
 
     
