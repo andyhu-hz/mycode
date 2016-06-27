@@ -4,19 +4,19 @@
 #include "lua/lauxlib.h"
 #include "lua/lualib.h"
 
-static int _hello_sin(lua_State *L){
+static int _sin(lua_State *L){
     double d = luaL_checknumber(L, 1);
     lua_pushnumber(L, sin(d));
     return 1;
 }
 
-int luaopen_hello_library(lua_State *L){
+int luaopen_test_library(lua_State *L){
 
-    luaL_Reg hello_lib[] = {
-        {"hello_sin" , _hello_sin},
+    luaL_Reg test_lib[] = {
+        {"_sin" , _sin},
         {NULL, NULL}
     };
-    luaL_newlib(L, hello_lib);
+    luaL_newlib(L, test_lib);
     return 1;
 }
 

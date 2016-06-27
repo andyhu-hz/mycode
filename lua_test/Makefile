@@ -1,5 +1,5 @@
-program_NAME := hello_library.so
-program_C_SRCS := $(wildcard main.c)
+program_NAME := test_library.so
+program_C_SRCS := $(wildcard test_library.c)
 program_CXX_SRCS := $(wildcard *.cpp)
 program_C_OBJS := ${program_C_SRCS:.c=.o}
 program_CXX_OBJS := ${program_CXX_SRCS:.cpp=.o}
