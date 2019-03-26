@@ -12,8 +12,10 @@ program_shared_LIBRARIES :=
 CPPFLAGS += $(foreach includedir,$(program_INCLUDE_DIRS),-I$(includedir))
 CPPFLAGS += -g -Wall
 LDFLAGS += $(foreach librarydir,$(program_LIBRARY_DIRS),-L$(librarydir))
-LDFLAGS += $(foreach library,$(program_static_LIBRARIES),$(library))
-LDFLAGS += $(foreach library,$(program_shared_LIBRARIES),-l$(library))
+
+LIBS = $(foreach library,$(program_static_LIBRARIES),$(library))
+#LIBS = $(foreach library,$(program_shared_LIBRARIES),-l$(library))
+LIBS += -ldl
 
 $(CC) = gcc
 #$(CPP) = gcc -E
@@ -26,7 +28,7 @@ $(LD) = ld
 all: $(program_NAME)
 
 $(program_NAME): $(program_OBJS)
-	$(LINK.cc) $(program_OBJS) -o $(program_NAME)
+	$(LINK.cc) -o $@ $^ $(LIBS)
 
 clean:
 	@- $(RM) $(program_NAME)
